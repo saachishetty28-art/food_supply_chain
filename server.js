@@ -4,6 +4,11 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
+const path = require('path');
+// This forces Express to serve your index.html file directly on the root link
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 const PORT = process.env.PORT || 3000;
 
 // Middleware
