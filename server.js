@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(cors());
 app.use(express.json()); // Allows server to read JSON data sent by the user
-app.use(express.static('public')); // Serves our frontend website folder
+app.use(express.static(__dirname)); // Serves our frontend website folder
 
 // Basic MongoDB Connection (Uses a local fallback if a cloud URL isn't set up yet)
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/food_supply';
